@@ -15,7 +15,7 @@ Please change 0.0.0.0 to your host and 1337 to your port in the following lines 
 <!--#endif -->
 
  ```
-[![Shell Screenshot][product-screenshot]]
+![Shell Screenshot][product-screenshot]
 
 Referenses : 
 
