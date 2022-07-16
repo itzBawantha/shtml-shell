@@ -109,6 +109,8 @@ Shell with Server Side Inclusion Shell
       border-radius: 5px;
       border: 1px solid;
       font: 10pt arial, "Courier New";
+      width: 100%;
+      text-align: left;
     }
   
     .area123 {
@@ -120,6 +122,8 @@ Shell with Server Side Inclusion Shell
       border-radius: 5px;
       border: 1px solid;
       font: 10pt arial, "Courier New";
+      width: 100%;
+      text-align: left;
     }
   
     input[type="button"]:hover,
