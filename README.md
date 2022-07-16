@@ -15,7 +15,7 @@ Please change 0.0.0.0 to your host and 1337 to your port in the following lines 
 <!--#endif -->
 
  ```
-
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Referenses : 
 
@@ -25,4 +25,5 @@ Referenses :
 
  * Documentation : https://httpd.apache.org/docs/2.4/mod/mod_include.html
 
- 
+
+[product-screenshot]: img/ssi-shell.png
