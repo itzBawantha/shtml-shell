@@ -223,7 +223,6 @@ Shell with Server Side Inclusion Shell
 <br>
 </div>
 
-
 <br>
 <div align=left width=100% border=0 style=background-color:#000000; class="area123">
 <b><font size=+1>Reverse Shell or Command Output</font></b>
@@ -235,6 +234,7 @@ Shell with Server Side Inclusion Shell
 <br>
 </div>
 <br>
-<br>
+
+
 </body>
 </html>
