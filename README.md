@@ -1,10 +1,10 @@
 # shtml-shell
 
-This Shell abuses the Server Side Inclusions in HTML and allow you get get a reverse connection back to your own machin 
+This shell abuses the Server Side Inclusions in HTML and allows you to get a reverse connection back to your own machine.
 
-This can come in handy when you want to get arround file extension whitlist
+This can come in handy when you want to get around file extension whitlists.
 
-Please change 0.0.0.0 to your host and 1337 to your port in the following lines if you want to get the reverse connection
+Please change 0.0.0.0 to your host and 1337 to your port in the following lines if you want to get the reverse connection.
 
 ```sh
 
@@ -17,7 +17,7 @@ Please change 0.0.0.0 to your host and 1337 to your port in the following lines 
  ```
 ![Shell Screenshot][product-screenshot]
 
-Referenses : 
+References : 
 
  * What is SSI : https://httpd.apache.org/docs/current/howto/ssi.html#:~:text=What%20are%20SSI%3F,program%2C%20or%20other%20dynamic%20technology.
  
